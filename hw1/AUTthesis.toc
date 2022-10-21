@@ -1,0 +1,22 @@
+\edef \SavedTocDepth {\the \value {tocdepth}}
+\setcounter {tocdepth}{-10}
+\contentsline {chapter}{فهرست اشکال}{ج}{section*.1}%
+\par عنوان\hfill صفحه \par 
+\setcounter {tocdepth}{\SavedTocDepth }
+\contentsline {chapter}{\numberline {1}مقدمه}{1}{chapter.1}%
+\contentsline {chapter}{\numberline {2} تعبیه همسایه تصادفی (اس ان ای) }{4}{chapter.2}%
+\contentsline {chapter}{\numberline {3} روش تی اس ان ای }{8}{chapter.3}%
+\contentsline {section}{\numberline {3-1}اس ان ای متقارن}{9}{section.3.1}%
+\contentsline {section}{\numberline {3-2}مشکل شلوغی}{10}{section.3.2}%
+\contentsline {section}{\numberline {3-3}دم نامناسب می‌تواند ابعاد ازبین رفته را جبران کند}{11}{section.3.3}%
+\contentsline {section}{\numberline {3-4}روش‌های بهینه‌سازی برای تی-اس‌ان‌ای}{12}{section.3.4}%
+\contentsline {chapter}{\numberline {4}آزمایش‌ها}{14}{chapter.4}%
+\contentsline {section}{\numberline {4-1}دیتاست‌ها}{15}{section.4.1}%
+\contentsline {section}{\numberline {4-2}نحوه‌آزمایش}{16}{section.4.2}%
+\contentsline {chapter}{\numberline {5} به‌کارگیری تی‌اس‌ان‌ای بر روی مجموعه داده‌های بزرگ}{21}{chapter.5}%
+\contentsline {chapter}{\numberline {6}بررسی نهایی}{25}{chapter.6}%
+\contentsline {section}{\numberline {6-1}مقایسه با دیگر تکنینک‌ها}{26}{section.6.1}%
+\contentsline {section}{\numberline {6-2}نقاط ضعف}{27}{section.6.2}%
+\contentsline {section}{\numberline {6-3}نتیجه گیری}{28}{section.6.3}%
+\contentsline {chapter}{منابع و مراجع}{29}{appendix*.4}%
+\contentsfinish 
