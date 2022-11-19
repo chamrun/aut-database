@@ -3,3 +3,13 @@
 hw1/chapter1.aux
 *.gz
 *.aux
+*.DS_Store
+*.png
+*.bbl
+*.blg
+*.cls
+*.idx
+*.lof
+*.lot
+*.out
+*.toc
