@@ -246,9 +246,6 @@ $Project$
 
 
 \section*{\centering سوال چهارم}
-
-الف)
-
 جدول
 $T1$
 به این شکل است:
@@ -288,3 +285,106 @@ $T2$
 }
 
 \end{LTRbibitems}
+
+
+
+الف)
+
+حاصل عملگر
+$Natural Join$
+بین
+$T1$
+و
+$T2$
+از ما خواسته شده است، که به این شکل است:
+
+
+\begin{LTRbibitems}
+    \resetlatinfont{
+        
+        \begin{tabular}{|c|c|c|}
+            \hline
+            A & B & C \\ \hline
+            a1 & b1 & c1 \\ \hline
+            a1 & b1 & c2 \\ \hline
+            a2 & b2 & c2 \\ \hline
+            a2 & b2 & c3 \\ \hline
+            a2 & b2 & c4 \\ \hline
+        \end{tabular}
+
+        }
+\end{LTRbibitems}
+
+
+در دومین کوئری
+ ابتدا عملگر
+$Project$
+ستون
+$B$
+را از جدول‌ها انتخاب می‌کند.
+حاصل، این دو ستون خواهند بود:
+
+
+\begin{LTRbibitems}
+    \resetlatinfont{
+        
+        \begin{tabular}{|c|}
+            \hline
+            B \\ \hline
+            b1 \\ \hline
+            b2 \\ \hline
+            b3 \\ \hline
+        \end{tabular}
+    }
+\end{LTRbibitems}
+
+
+\begin{LTRbibitems}
+    \resetlatinfont{
+        
+        \begin{tabular}{|c|}
+            \hline
+            B \\ \hline
+            b1 \\ \hline
+            b1 \\ \hline
+            b2 \\ \hline
+            b2 \\ \hline
+            b2 \\ \hline
+        \end{tabular}
+    }
+\end{LTRbibitems}
+
+سپس عملگر
+$set intersection$
+بین این دو حاصل، اعمال می‌شود و نتیجه‌ی نهایی، به این شکل خواهد بود:
+
+
+\begin{LTRbibitems}
+    \resetlatinfont{
+        
+        \begin{tabular}{|c|}
+            \hline
+            B \\ \hline
+            b1 \\ \hline
+            b2 \\ \hline
+        \end{tabular}
+    }
+
+
+\end{LTRbibitems}
+
+
+ب)
+
+عملگرهای
+$Natural Join$
+و
+$intersection$
+کاملا عملگرهای متفاوتی هستند.
+
+با عملگر
+$Natural Join$
+پس از یافتن سطرهایی که مقدارِ سطرهایشان در ستون‌های مشترک، یکی‌ست، ضرب کارتزین بین این داده‌ها انجام می‌شود.
+اما در عملگر
+$intersection$
+به نوعی اشتراک گرفته می‌شود و سطرهایی که در هر دو جدول دقیقا یکی هستند، بازگردانده می‌شوند.
