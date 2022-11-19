@@ -180,3 +180,56 @@ $Natural Join$
 اعمال می‌شود.
 
 
+
+\section*{\centering سوال سوم}
+
+الف)
+
+در کوئری اول، ابتدا تمام سطرهایی که در آن‌ها مقدار 
+$salary$
+بزرگترمساوی ۹۰۰۰۰ است انتخاب می‌شوند. سپس مقادیر ستون‌های
+$name$
+و
+$dept_name$
+از آن‌ها باز می‌گردد.
+پس نتیجه‌ی نهایی، جدولی به این شکل خواهد بود:
+
+
+
+
+\begin{LTRbibitems}
+    \resetlatinfont{
+        
+        \begin{tabular}{|c|c|c|}
+            \hline
+            name & deptname \\ \hline
+            Einstein & Physics \\ \hline
+            Wu & Finance \\ \hline
+            Brandt & Comp. Sci. \\ \hline
+            % Ali & CS \\ \hline
+            % Reza & CS \\ \hline
+            \end{tabular}
+    }
+
+
+\end{LTRbibitems}
+
+
+اما در کوئری دوم، ابتدا ستون‌های
+$deptname$
+و
+$salary$
+با عملگر
+$Project$
+انتخاب می‌شوند.
+
+سپس کوئری روی آن‌ها زده می‌شود تا سطرهایی که در آن‌ها مقدار
+$salary$
+بزرگترمساوی ۹۰۰۰۰ است انتخاب شوند.
+با توجه به این که در دیتایی که به این کوئری داده می‌شود، دیگر ستون
+$salary$
+وجود ندارد، نتیجه‌ی نهایی، جدولی بدونِ سطر خواهد بود.
+
+
+
+
