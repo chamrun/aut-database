@@ -2,6 +2,10 @@
 % 	۱)بررسی انواع مدل‌های ارائه شده برای دیتابیس‌ها و مزایا و معایب آن‌ها نسبت به مدل رابطه‌ای
 % }
 
+
+
+\newenvironment{eng}{\begin{LTRbibitems}\resetlatinfont{#1}\end{LTRbibitems}}
+
 \section*{\centering سوال اول
 }
 
@@ -25,16 +29,25 @@ $select$
 اول نیز موجود است.
 
 
-
 \section*{\centering سوال دوم
 }
 
 کوئری اول را بررسی می‌کنیم.
-این کوئری، حاصلِ ضربِ کارتزین دو کوئریِ زیر است:
+این کوئری، حاصلِ ضربِ کارتزین نتیجه‌ی دو کوئریِ زیر است:
 
-$ SELECT   A   FROM   R   WHERE   B   =   1 $
 
-$ SELECT C FROM S WHERE B = 1 $
+
+
+    
+% \eng{SELECT A FROM R WHERE B = 7}
+
+\begin{LTRbibitems}\resetlatinfont{SELECT A FROM R WHERE B = 1}\end{LTRbibitems}
+
+\begin{LTRbibitems}\resetlatinfont{SELECT A FROM S WHERE B = 1}\end{LTRbibitems}
+
+% $ SELECT A FROM R WHERE B = 1 $
+
+% $ SELECT C FROM S WHERE B = 1 $
 
 یعنی ابتدا از هر دو جدول، سطرهایی را که مقدار ستون
 $B$
@@ -52,9 +65,10 @@ $B$
 حال کوئری دوم را بررسی می‌کنیم.
 در این کوئری، ابتدا ضرب کارتزین بین نتیجه‌ی این دو کوئری انجام می‌شود:
 
-$ SELECT A FROM R$
 
-$ SELECT * FROM S WHERE B = 1 $
+\begin{LTRbibitems}\resetlatinfont{SELECT A FROM R}\end{LTRbibitems}
+
+\begin{LTRbibitems}\resetlatinfont{SELECT * FROM S WHERE B = 1}\end{LTRbibitems}
 
 یعنی ابتدا از جدول
 $R$
