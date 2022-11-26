@@ -644,3 +644,26 @@ $Course.Name$
     \end{gather*}
 \end{LTRbibitems}
 
+
+۳)
+
+
+\begin{LTRbibitems}
+    \begin{gather*}
+        res1: ProcedureHistory \bowtie_{ProcedureHistory.PetID = Pets.PetID} Pets
+        \\
+        \\
+        query1: ProcedureHistory.ProcedureType = ProcedureDetails.ProcedureType 
+        \\
+        query2: ProcedureHistory.ProcedureSubCode = ProcedureDetails.ProcedureSubCode
+        \\
+        res2: res1 \bowtie_{query1 \& query2} ProcedureDetails
+        \\
+        \\
+        \\
+        finalRes: \prod _{Pets.Name, ProcedureDetails.Description} (res2)
+        \\
+    \end{gather*}
+\end{LTRbibitems}
+
+
