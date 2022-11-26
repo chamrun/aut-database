@@ -566,7 +566,49 @@ $Grade$
             CS448 & B \\ \hline
             CS448 & B \\ \hline
         \end{tabular}
+    }    
+\end{LTRbibitems}
+
+\bigbreak
+
+۴) با توجه به اصلاحات مطرح شده، از راست به چپ شروع می‌کنیم.
+ابتدا جدول
+$Course$
+را با
+
+$Enrollment$
+بر اساس تنها فیلد مشترکشان یعنی
+$CourseID$
+،
+$Join$
+می‌کنیم. سپس حاصل را با جدول
+$Students$
+بر اساس فیلد
+$StudentID$
+،
+$Join$
+می‌کنیم.
+
+سپس سطرهایی را انتخاب می‌کنیم که در آن‌ها
+$StudentID$
+برابر با ۱۰ است.
+سپس از حاصل، ستون‌های
+$Students.Name$
+و
+$Course.Name$
+انتخاب می‌شود.
+
+خروجی نهایی، نام دانشجویی‌ست که آی‌دی او ۱۰ است، و نام کورس‌هایی که دارد.
+
+\bigbreak
+
+\begin{LTRbibitems}
+    \resetlatinfont{
+        \begin{tabular}{|c|c|}
+            \hline
+            Students.Name & Course.Name \\ \hline
+            Harry Potter & Introduction to Relational Database Systems \\ \hline
+            Harry Potter & Algorithm Design, Analysis, And Implementation \\ \hline
+        \end{tabular}
     }
-
-    
-
+\end{LTRbibitems}
