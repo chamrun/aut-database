@@ -199,7 +199,6 @@ $dept_name$
 
 \begin{LTRbibitems}
     \resetlatinfont{
-        
         \begin{tabular}{|c|c|c|}
             \hline
             name & deptname \\ \hline
@@ -210,8 +209,6 @@ $dept_name$
             % Reza & CS \\ \hline
             \end{tabular}
     }
-
-
 \end{LTRbibitems}
 
 
@@ -229,8 +226,6 @@ $salary$
 با توجه به این که در دیتایی که به این کوئری داده می‌شود، دیگر ستون
 $salary$
 وجود ندارد، نتیجه‌ی نهایی، جدولی بدونِ سطر خواهد بود.
-
-
 
 ب)
 
@@ -253,7 +248,6 @@ $T1$
 
 \begin{LTRbibitems}
     \resetlatinfont{
-        
         \begin{tabular}{|c|c|}
             \hline
             A & B \\ \hline
@@ -272,7 +266,6 @@ $T2$
 
 \begin{LTRbibitems}
     \resetlatinfont{
-        
         \begin{tabular}{|c|c|}
             \hline
             B & C \\ \hline
@@ -283,7 +276,6 @@ $T2$
             b2 & c4 \\ \hline
         \end{tabular}
 }
-
 \end{LTRbibitems}
 
 
@@ -301,7 +293,6 @@ $T2$
 
 \begin{LTRbibitems}
     \resetlatinfont{
-        
         \begin{tabular}{|c|c|c|}
             \hline
             A & B & C \\ \hline
@@ -311,7 +302,6 @@ $T2$
             a2 & b2 & c3 \\ \hline
             a2 & b2 & c4 \\ \hline
         \end{tabular}
-
         }
 \end{LTRbibitems}
 
@@ -341,7 +331,6 @@ $B$
 
 \begin{LTRbibitems}
     \resetlatinfont{
-        
         \begin{tabular}{|c|}
             \hline
             B \\ \hline
@@ -389,10 +378,6 @@ $Natural Join$
 $intersection$
 به نوعی اشتراک گرفته می‌شود و سطرهایی که در هر دو جدول دقیقا یکی هستند، بازگردانده می‌شوند.
 
-
-
-
-
 \section*{\centering سوال پنجم}
 
 جدول
@@ -420,7 +405,6 @@ $Student$
             13 & Sun Tzu & China \\ \hline
             14 & Tony Stark & USA \\ \hline
             15 & Leia Organa & USA \\ \hline
-            
         \end{tabular}
     }
 \end{LTRbibitems}
@@ -454,7 +438,6 @@ $Enrollment$
             10 & CS580 &  A & 1 & 1 \\ \hline
             12 & CS580 &  B & 2 & 3 \\ \hline
             15 & CS580 &  A & 2 & 3 \\ \hline
-
         \end{tabular}
     }
 \end{LTRbibitems}
@@ -462,10 +445,12 @@ $Enrollment$
 
 
 
+\bigbreak
 جدول
 $Course$
 به این شکل است:
 
+\bigbreak
 
 
 
@@ -478,6 +463,38 @@ $Course$
             CS448 & 7 & Introduction to Relational Database Systems \\ \hline
             CS390 & 2 & Linear Algebra \\ \hline
             CS580 & 14 & Algorithm Design, Analysis, And Implementation \\ \hline
+        \end{tabular}
+    }
+\end{LTRbibitems}
+
+\bigbreak
+
+۱) ابتدا از 
+$Join$
+جدول
+$Enrollment$
+و
+$Course$
+دیتاهای دانشجوی شماره‌ی ۵ انتخاب می‌شود، سپس ستون‌های 
+$CourseID$
+و
+$Grade$
+انتخاب می‌شود.
+
+\bigbreak
+\\
+\\
+
+\begin{LTRbibitems}
+    \resetlatinfont{
+        \begin{tabular}{|c|c|}
+            \hline
+            CourseID & Grade \\ \hline
+            CS448 & B \\ \hline
+        \end{tabular}
+    }
+\end{LTRbibitems}
+
 
         \end{tabular}
     }
