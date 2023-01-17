@@ -1,5 +1,8 @@
 -- Postgres
 
+
+-- Phase 2
+
 -- Customer(first_name, last_name, national_id, address(street, city, province, country), phone_number)
 
 CREATE TABLE Address
@@ -128,3 +131,19 @@ CREATE TABLE SparePartOrder
     FOREIGN KEY (OrderID) REFERENCES Orders (OrderID),
     FOREIGN KEY (SparePartID) REFERENCES SparePart (SparePartID)
 );
+
+
+
+-- Phase 3: Insert Data
+
+-- 10 addresses
+INSERT INTO Address (AddressID, Street, City, Province) VALUES (1, 'Street 1', 'City 1', 'Province 1');
+INSERT INTO Address VALUES (2, 'Street 2', 'City 2', 'Province 2');
+INSERT INTO Address (AddressID, Street, City, Province) VALUES (3, 'Street 3', 'City 3', 'Province 3');
+INSERT INTO Address (AddressID, Street, City, Province) VALUES (4, 'Street 4', 'City 4', 'Province 4');
+INSERT INTO Address (AddressID, Street, City, Province) VALUES (5, 'Street 5', 'City 5', 'Province 5');
+INSERT INTO Address (AddressID, Street, City, Province) VALUES (6, 'Street 6', 'City 6', 'Province 6');
+INSERT INTO Address (AddressID, Street, City, Province) VALUES (7, 'Street 7', 'City 7', 'Province 7');
+INSERT INTO Address (AddressID, Street, City, Province) VALUES (8, 'Street 8', 'City 8', 'Province 8');
+INSERT INTO Address (AddressID, Street, City, Province) VALUES (9, 'Street 9', 'City 9', 'Province 9');
+INSERT INTO Address (AddressID, Street, City, Province) VALUES (10, 'Street 10', 'City 10', 'Province 10');
