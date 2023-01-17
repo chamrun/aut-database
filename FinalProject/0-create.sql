@@ -147,3 +147,17 @@ INSERT INTO Address (AddressID, Street, City, Province) VALUES (7, 'Street 7', '
 INSERT INTO Address (AddressID, Street, City, Province) VALUES (8, 'Street 8', 'City 8', 'Province 8');
 INSERT INTO Address (AddressID, Street, City, Province) VALUES (9, 'Street 9', 'City 9', 'Province 9');
 INSERT INTO Address (AddressID, Street, City, Province) VALUES (10, 'Street 10', 'City 10', 'Province 10');
+
+-- 10 customers
+INSERT INTO Customer (CustomerID, FirstName, LastName, NationalID, AddressID, PhoneNumber) VALUES (1, 'FirstName 1', 'LastName 1', 'NationalID 1', 1, 'PhoneNumber 1');
+INSERT INTO Customer (CustomerID, FirstName, LastName, NationalID, AddressID, PhoneNumber) VALUES (2, 'FirstName 2', 'LastName 2', 'NationalID 2', 2, 'PhoneNumber 2');
+INSERT INTO Customer (CustomerID, FirstName, LastName, NationalID, AddressID, PhoneNumber) VALUES (3, 'FirstName 3', 'LastName 3', 'NationalID 3', 3, 'PhoneNumber 3');
+INSERT INTO Customer (CustomerID, FirstName, LastName, NationalID, AddressID, PhoneNumber) VALUES (4, 'FirstName 4', 'LastName 4', 'NationalID 4', 4, 'PhoneNumber 4');
+INSERT INTO Customer (CustomerID, FirstName, LastName, NationalID, AddressID, PhoneNumber) VALUES (5, 'FirstName 5', 'LastName 5', 'NationalID 5', 5, 'PhoneNumber 5');
+INSERT INTO Customer (CustomerID, FirstName, LastName, NationalID, AddressID, PhoneNumber) VALUES (6, 'FirstName 6', 'LastName 6', 'NationalID 6', 6, 'PhoneNumber 6');
+INSERT INTO Customer (CustomerID, FirstName, LastName, NationalID, AddressID, PhoneNumber) VALUES (7, 'FirstName 7', 'LastName 7', 'NationalID 7', 7, 'PhoneNumber 7');
+INSERT INTO Customer (CustomerID, FirstName, LastName, NationalID, AddressID, PhoneNumber) VALUES (8, 'FirstName 8', 'LastName 8', 'NationalID 8', 8, 'PhoneNumber 8');
+INSERT INTO Customer (CustomerID, FirstName, LastName, NationalID, AddressID, PhoneNumber) VALUES (9, 'FirstName 9', 'LastName 9', 'NationalID 9', 9, 'PhoneNumber 9');
+INSERT INTO Customer (CustomerID, FirstName, LastName, NationalID, AddressID, PhoneNumber) VALUES (10, 'FirstName 10', 'LastName 10', 'NationalID 10', 10, 'PhoneNumber 10');
+
+
