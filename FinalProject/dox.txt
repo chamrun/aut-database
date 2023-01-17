@@ -1,0 +1,24 @@
+Car
+Id == VIN
+
+Brands(one brand for each car)
+
+Models(some models for each brand)
+
+Options
+1. color: Blue, Black, White...
+2. transmission: manual, automatic
+
+Supplier(name, contract_start, contract_end, manager, address)
+
+SparePart(name, price, supplier, quantity, used_in_models)
+
+Customer(first_name, last_name, national_id, address(street, city, province, country), phone_number)
+
+Order(customer, type(car, spare_part), product)
+
+
+
+Customer Example:
+(Sherlock, Holmes, 123456789011, +44796268462, address(221B Baker Street, London, London))
+
