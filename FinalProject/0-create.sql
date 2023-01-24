@@ -474,31 +474,44 @@ WHERE Car.ModelID = Model.ModelID;
 SELECT *
 FROM car_brand_model;
 
+-- Phase 6: Transactions
 
--- Phase 3: Insert Data
+-- Postgres
+-- 1. Add column "IsSold" to Car table, default value is false
+ALTER TABLE Car
+    ADD COLUMN IsSold boolean DEFAULT false;
 
--- 10 addresses
-INSERT INTO Address (AddressID, Street, City, Province) VALUES (1, 'Street 1', 'City 1', 'Province 1');
-INSERT INTO Address VALUES (2, 'Street 2', 'City 2', 'Province 2');
-INSERT INTO Address (AddressID, Street, City, Province) VALUES (3, 'Street 3', 'City 3', 'Province 3');
-INSERT INTO Address (AddressID, Street, City, Province) VALUES (4, 'Street 4', 'City 4', 'Province 4');
-INSERT INTO Address (AddressID, Street, City, Province) VALUES (5, 'Street 5', 'City 5', 'Province 5');
-INSERT INTO Address (AddressID, Street, City, Province) VALUES (6, 'Street 6', 'City 6', 'Province 6');
-INSERT INTO Address (AddressID, Street, City, Province) VALUES (7, 'Street 7', 'City 7', 'Province 7');
-INSERT INTO Address (AddressID, Street, City, Province) VALUES (8, 'Street 8', 'City 8', 'Province 8');
-INSERT INTO Address (AddressID, Street, City, Province) VALUES (9, 'Street 9', 'City 9', 'Province 9');
-INSERT INTO Address (AddressID, Street, City, Province) VALUES (10, 'Street 10', 'City 10', 'Province 10');
+-- 2. Update IsSold to true for all cars that have been ordered
+UPDATE Car
+SET IsSold = TRUE
+WHERE ProductID IN (SELECT ProductID FROM OrderProduct);
 
--- 10 customers
-INSERT INTO Customer (CustomerID, FirstName, LastName, NationalID, AddressID, PhoneNumber) VALUES (1, 'FirstName 1', 'LastName 1', 'NationalID 1', 1, 'PhoneNumber 1');
-INSERT INTO Customer (CustomerID, FirstName, LastName, NationalID, AddressID, PhoneNumber) VALUES (2, 'FirstName 2', 'LastName 2', 'NationalID 2', 2, 'PhoneNumber 2');
-INSERT INTO Customer (CustomerID, FirstName, LastName, NationalID, AddressID, PhoneNumber) VALUES (3, 'FirstName 3', 'LastName 3', 'NationalID 3', 3, 'PhoneNumber 3');
-INSERT INTO Customer (CustomerID, FirstName, LastName, NationalID, AddressID, PhoneNumber) VALUES (4, 'FirstName 4', 'LastName 4', 'NationalID 4', 4, 'PhoneNumber 4');
-INSERT INTO Customer (CustomerID, FirstName, LastName, NationalID, AddressID, PhoneNumber) VALUES (5, 'FirstName 5', 'LastName 5', 'NationalID 5', 5, 'PhoneNumber 5');
-INSERT INTO Customer (CustomerID, FirstName, LastName, NationalID, AddressID, PhoneNumber) VALUES (6, 'FirstName 6', 'LastName 6', 'NationalID 6', 6, 'PhoneNumber 6');
-INSERT INTO Customer (CustomerID, FirstName, LastName, NationalID, AddressID, PhoneNumber) VALUES (7, 'FirstName 7', 'LastName 7', 'NationalID 7', 7, 'PhoneNumber 7');
-INSERT INTO Customer (CustomerID, FirstName, LastName, NationalID, AddressID, PhoneNumber) VALUES (8, 'FirstName 8', 'LastName 8', 'NationalID 8', 8, 'PhoneNumber 8');
-INSERT INTO Customer (CustomerID, FirstName, LastName, NationalID, AddressID, PhoneNumber) VALUES (9, 'FirstName 9', 'LastName 9', 'NationalID 9', 9, 'PhoneNumber 9');
-INSERT INTO Customer (CustomerID, FirstName, LastName, NationalID, AddressID, PhoneNumber) VALUES (10, 'FirstName 10', 'LastName 10', 'NationalID 10', 10, 'PhoneNumber 10');
+SELECT ProductID
+FROM OrderProduct;
+
+
+-- A transaction that creates an order (for a car that has not been sold yet) and updates the IsSold column to true
+BEGIN;
+INSERT INTO Orders (OrderID, CustomerID)
+VALUES (5, 1);
+INSERT INTO OrderProduct (OrderID, ProductID, Quantity)
+VALUES (5, 15, 1);
+UPDATE Car
+SET IsSold = TRUE
+WHERE ProductID = 15;
+COMMIT;
+
+-- A transaction that creates an order (for a spare part) and updates the quantity of the spare part
+
+BEGIN;
+INSERT INTO Orders (OrderID, CustomerID)
+VALUES (6, 1);
+INSERT INTO OrderProduct (OrderID, ProductID, Quantity)
+VALUES (6, 5, 1);
+UPDATE SparePart
+SET Quantity = Quantity - 1
+WHERE SparePartID = 5;
+COMMIT;
+
 
 
