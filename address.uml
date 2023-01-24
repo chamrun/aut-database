@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>DATABASE</ID>
+  <OriginalElement>b1e6c69e-ed5e-46f9-a930-0d3cc353ba96.TABLE:postgres.public.address</OriginalElement>
+  <nodes>
+    <node x="18.0" y="629.0">b1e6c69e-ed5e-46f9-a930-0d3cc353ba96.TABLE:postgres.public.sparepartorder</node>
+    <node x="0.0" y="181.0">b1e6c69e-ed5e-46f9-a930-0d3cc353ba96.TABLE:postgres.public.customer</node>
+    <node x="23.5" y="448.0">b1e6c69e-ed5e-46f9-a930-0d3cc353ba96.TABLE:postgres.public.orders</node>
+    <node x="375.75" y="629.0">b1e6c69e-ed5e-46f9-a930-0d3cc353ba96.TABLE:postgres.public.carorder</node>
+    <node x="255.5" y="412.0">b1e6c69e-ed5e-46f9-a930-0d3cc353ba96.TABLE:postgres.public.sparepart</node>
+    <node x="441.5" y="424.0">b1e6c69e-ed5e-46f9-a930-0d3cc353ba96.TABLE:postgres.public.car</node>
+    <node x="568.25" y="217.0">b1e6c69e-ed5e-46f9-a930-0d3cc353ba96.TABLE:postgres.public.model</node>
+    <node x="135.25000000000006" y="0.0">b1e6c69e-ed5e-46f9-a930-0d3cc353ba96.TABLE:postgres.public.address</node>
+    <node x="540.75" y="641.0">b1e6c69e-ed5e-46f9-a930-0d3cc353ba96.TABLE:postgres.public.modelsparepart</node>
+    <node x="568.25" y="24.0">b1e6c69e-ed5e-46f9-a930-0d3cc353ba96.TABLE:postgres.public.brand</node>
+    <node x="232.0" y="193.0">b1e6c69e-ed5e-46f9-a930-0d3cc353ba96.TABLE:postgres.public.supplier</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="b1e6c69e-ed5e-46f9-a930-0d3cc353ba96.TABLE:postgres.public.modelsparepart" target="b1e6c69e-ed5e-46f9-a930-0d3cc353ba96.TABLE:postgres.public.sparepart" relationship="REFERENCES">
+      <point x="-42.75" y="-41.0" />
+      <point x="583.5" y="598.0" />
+      <point x="338.5" y="598.0" />
+      <point x="0.0" y="77.5" />
+    </edge>
+    <edge source="b1e6c69e-ed5e-46f9-a930-0d3cc353ba96.TABLE:postgres.public.carorder" target="b1e6c69e-ed5e-46f9-a930-0d3cc353ba96.TABLE:postgres.public.orders" relationship="REFERENCES">
+      <point x="-36.25" y="-53.0" />
+      <point x="412.0" y="608.0" />
+      <point x="106.0" y="608.0" />
+      <point x="0.0" y="41.5" />
+    </edge>
+    <edge source="b1e6c69e-ed5e-46f9-a930-0d3cc353ba96.TABLE:postgres.public.carorder" target="b1e6c69e-ed5e-46f9-a930-0d3cc353ba96.TABLE:postgres.public.car" relationship="REFERENCES">
+      <point x="36.25" y="-53.0" />
+      <point x="484.5" y="588.0" />
+      <point x="548.0" y="588.0" />
+      <point x="0.0" y="65.5" />
+    </edge>
+    <edge source="b1e6c69e-ed5e-46f9-a930-0d3cc353ba96.TABLE:postgres.public.supplier" target="b1e6c69e-ed5e-46f9-a930-0d3cc353ba96.TABLE:postgres.public.address" relationship="REFERENCES">
+      <point x="0.0" y="-77.5" />
+      <point x="338.5" y="156.0" />
+      <point x="222.25000000000006" y="156.0" />
+      <point x="0.0" y="65.5" />
+    </edge>
+    <edge source="b1e6c69e-ed5e-46f9-a930-0d3cc353ba96.TABLE:postgres.public.model" target="b1e6c69e-ed5e-46f9-a930-0d3cc353ba96.TABLE:postgres.public.brand" relationship="REFERENCES">
+      <point x="0.0" y="-53.5" />
+      <point x="0.0" y="41.5" />
+    </edge>
+    <edge source="b1e6c69e-ed5e-46f9-a930-0d3cc353ba96.TABLE:postgres.public.sparepartorder" target="b1e6c69e-ed5e-46f9-a930-0d3cc353ba96.TABLE:postgres.public.sparepart" relationship="REFERENCES">
+      <point x="41.5" y="-53.0" />
+      <point x="142.5" y="598.0" />
+      <point x="338.5" y="598.0" />
+      <point x="0.0" y="77.5" />
+    </edge>
+    <edge source="b1e6c69e-ed5e-46f9-a930-0d3cc353ba96.TABLE:postgres.public.modelsparepart" target="b1e6c69e-ed5e-46f9-a930-0d3cc353ba96.TABLE:postgres.public.model" relationship="REFERENCES">
+      <point x="42.75" y="-41.0" />
+      <point x="669.0" y="608.0" />
+      <point x="698.75" y="608.0" />
+      <point x="698.75" y="386.0" />
+      <point x="640.25" y="386.0" />
+      <point x="0.0" y="53.5" />
+    </edge>
+    <edge source="b1e6c69e-ed5e-46f9-a930-0d3cc353ba96.TABLE:postgres.public.orders" target="b1e6c69e-ed5e-46f9-a930-0d3cc353ba96.TABLE:postgres.public.customer" relationship="REFERENCES">
+      <point x="0.0" y="-41.5" />
+      <point x="0.0" y="89.5" />
+    </edge>
+    <edge source="b1e6c69e-ed5e-46f9-a930-0d3cc353ba96.TABLE:postgres.public.sparepartorder" target="b1e6c69e-ed5e-46f9-a930-0d3cc353ba96.TABLE:postgres.public.orders" relationship="REFERENCES">
+      <point x="-41.5" y="-53.0" />
+      <point x="59.5" y="608.0" />
+      <point x="106.0" y="608.0" />
+      <point x="0.0" y="41.5" />
+    </edge>
+    <edge source="b1e6c69e-ed5e-46f9-a930-0d3cc353ba96.TABLE:postgres.public.customer" target="b1e6c69e-ed5e-46f9-a930-0d3cc353ba96.TABLE:postgres.public.address" relationship="REFERENCES">
+      <point x="0.0" y="-89.5" />
+      <point x="106.0" y="156.0" />
+      <point x="222.25000000000006" y="156.0" />
+      <point x="0.0" y="65.5" />
+    </edge>
+    <edge source="b1e6c69e-ed5e-46f9-a930-0d3cc353ba96.TABLE:postgres.public.sparepart" target="b1e6c69e-ed5e-46f9-a930-0d3cc353ba96.TABLE:postgres.public.supplier" relationship="REFERENCES">
+      <point x="0.0" y="-77.5" />
+      <point x="0.0" y="77.5" />
+    </edge>
+    <edge source="b1e6c69e-ed5e-46f9-a930-0d3cc353ba96.TABLE:postgres.public.car" target="b1e6c69e-ed5e-46f9-a930-0d3cc353ba96.TABLE:postgres.public.model" relationship="REFERENCES">
+      <point x="0.0" y="-65.5" />
+      <point x="548.0" y="386.0" />
+      <point x="640.25" y="386.0" />
+      <point x="0.0" y="53.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="1.0" showDependencies="false" x="456.5" y="367.5" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Columns</Category>
+    <Category>Comments</Category>
+    <Category>Key columns</Category>
+    <Category>Virtual foreign keys</Category>
+  </Categories>
+</Diagram>
+
