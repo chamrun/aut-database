@@ -545,3 +545,21 @@ CREATE INDEX PhoneNumber
 CREATE INDEX BrandTitle
     ON Brand (Title);
 
+-- Phase 9: Users and Roles
+
+-- ToDO
+-- Create a user named "john_doe" with password "johndoe2000johndoe"
+-- No write access to the database
+-- read access to the database
+
+CREATE USER
+    john_doe
+    WITH PASSWORD 'johndoe2000johndoe';
+
+-- ToDo
+-- GRANT CONNECT ON DATABASE car_dealership TO john_doe;
+
+GRANT USAGE ON SCHEMA public TO john_doe;
+
+GRANT SELECT ON ALL TABLES IN SCHEMA public TO john_doe;
+
