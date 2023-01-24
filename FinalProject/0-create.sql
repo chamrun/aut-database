@@ -393,16 +393,27 @@ INSERT INTO OrderProduct (OrderID, ProductID, Quantity)
 VALUES (3, 4, 5);
 
 
+-- Phase 4: Queries
 
-CREATE TABLE SparePartOrder
-(
-    OrderID     int NOT NULL,
-    SparePartID int NOT NULL,
-    Quantity    int NOT NULL,
-    FOREIGN KEY (OrderID) REFERENCES Orders (OrderID),
-    FOREIGN KEY (SparePartID) REFERENCES SparePart (SparePartID)
-);
+INSERT INTO Address (AddressID, Street, City, Province)
+VALUES (11, '212 Baker Street', 'London', 'London');
+INSERT INTO Customer (CustomerID, FirstName, LastName, NationalID, AddressID, PhoneNumber)
+VALUES (11, 'sherlock', 'holmes', '123456781011', 11, '+44796268462');
 
+INSERT INTO Orders (OrderID, CustomerID)
+VALUES (4, 11);
+INSERT INTO OrderProduct (OrderID, ProductID, Quantity)
+VALUES (4, 17, 38);
+
+-- Update phone number of sherlock holmes to +447342780080
+UPDATE Customer
+SET PhoneNumber = '+447342780080'
+WHERE CustomerID = 11;
+
+-- Delete all customers who have no orders
+DELETE
+FROM Customer
+WHERE CustomerID NOT IN (SELECT CustomerID FROM Orders);
 
 
 -- Phase 3: Insert Data
