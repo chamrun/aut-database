@@ -526,4 +526,22 @@ ALTER TABLE SparePart
 -- ADD CONSTRAINT check_car_is_sold
 -- CHECK (NOT (EXISTS (SELECT 1 FROM Car WHERE Car.VIN = Orders.OrderID AND Car.IsSold = true)));
 
+-- Phase 8: index
+
+-- index contractend on supplier table
+CREATE INDEX ContractEnd
+    ON Supplier (ContractEnd);
+
+-- index quantity on sparepart table
+CREATE INDEX Quantity
+    ON SparePart (Quantity);
+
+-- index phone number on customer table
+
+CREATE INDEX PhoneNumber
+    ON Customer (PhoneNumber);
+
+-- index title of brands
+CREATE INDEX BrandTitle
+    ON Brand (Title);
 
