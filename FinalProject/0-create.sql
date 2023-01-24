@@ -53,6 +53,76 @@ CREATE TABLE Model
     FOREIGN KEY (BrandID) REFERENCES Brand (BrandID)
 );
 
+
+
+-- Each order has a customer. There are just 2 type of orders:
+-- 1. Buy one or more cars
+-- 2. Buy one or more spare parts
+
+-- CREATE TABLE Orders
+-- (
+--     OrderID    int NOT NULL PRIMARY KEY,
+--     CustomerID int NOT NULL,
+--     FOREIGN KEY (CustomerID) REFERENCES Customer (CustomerID)
+-- );
+
+-- CREATE TABLE CarOrder
+-- (
+--     OrderID  int NOT NULL,
+--     VIN      int NOT NULL,
+--     Quantity int NOT NULL,
+--     FOREIGN KEY (OrderID) REFERENCES Orders (OrderID),
+--     FOREIGN KEY (VIN) REFERENCES Car (VIN)
+-- );
+
+-- CREATE TABLE SparePartOrder
+-- (
+--     OrderID     int NOT NULL,
+--     SparePartID int NOT NULL,
+--     Quantity    int NOT NULL,
+--     FOREIGN KEY (OrderID) REFERENCES Orders (OrderID),
+--     FOREIGN KEY (SparePartID) REFERENCES SparePart (SparePartID)
+-- );
+
+-- CREATE TABLE Orders
+-- (
+--     OrderID    int NOT NULL PRIMARY KEY,
+--     CustomerID int NOT NULL,
+--     Quantity   int NOT NULL,
+--     ProductID  int NOT NULL,
+--     FOREIGN KEY (CustomerID) REFERENCES Customer (CustomerID)
+-- );
+--
+-- CREATE TABLE Product
+-- (
+--     ProductID   int NOT NULL PRIMARY KEY,
+--     ProductType VARCHAR(50) CHECK (VALUE IN ('Car', 'SparePart'))
+-- );
+
+CREATE DOMAIN ProductType AS VARCHAR(50) CHECK (VALUE IN ('Car', 'SparePart'));
+
+CREATE TABLE Product
+(
+    ProductID   int NOT NULL PRIMARY KEY,
+    ProductType ProductType
+);
+
+CREATE TABLE Orders
+(
+    OrderID    int NOT NULL PRIMARY KEY,
+    CustomerID int NOT NULL,
+    FOREIGN KEY (CustomerID) REFERENCES Customer (CustomerID)
+);
+
+CREATE TABLE OrderProduct
+(
+    OrderID   int NOT NULL,
+    ProductID int NOT NULL,
+    Quantity  int NOT NULL,
+    FOREIGN KEY (OrderID) REFERENCES Orders (OrderID),
+    FOREIGN KEY (ProductID) REFERENCES Product (ProductID)
+);
+
 -- Each car, has two options:
 -- Options
 -- 1. color: Blue, Black, White...
@@ -60,17 +130,32 @@ CREATE TABLE Model
 
 CREATE DOMAIN Transmission AS VARCHAR(50) CHECK (VALUE IN ('manual', 'automatic'));
 CREATE DOMAIN Color AS VARCHAR(50) CHECK (VALUE IN ('blue', 'black', 'white', 'red'));
+
+-- We can add any color, in this way:
 ALTER DOMAIN Color ADD CONSTRAINT ColorCheck CHECK (VALUE IN ('blue', 'black', 'white', 'red', 'green', 'yellow'));
 
+
+-- CREATE TABLE Car
+-- (
+--     VIN          int NOT NULL PRIMARY KEY,
+--     Color        Color,
+--     Transmission Transmission,
+--     ModelID      int NOT NULL,
+--     FOREIGN KEY (ModelID) REFERENCES Model (ModelID)
+-- );
 
 CREATE TABLE Car
 (
     VIN          int NOT NULL PRIMARY KEY,
-    Color        VARCHAR(50),
+    Color        Color,
     Transmission Transmission,
     ModelID      int NOT NULL,
-    FOREIGN KEY (ModelID) REFERENCES Model (ModelID)
+    ProductID    int NOT NULL,
+    FOREIGN KEY (ModelID) REFERENCES Model (ModelID),
+    FOREIGN KEY (ProductID) REFERENCES Product (ProductID)
 );
+
+
 
 -- CREATE TABLE SparePart
 -- (
@@ -84,6 +169,16 @@ CREATE TABLE Car
 -- 1. We should have a table that contains all the spare parts
 -- 2. We should have a table that contains the relation between the spare parts and the models
 
+-- CREATE TABLE SparePart
+-- (
+--     SparePartID int NOT NULL PRIMARY KEY,
+--     Title       VARCHAR(50),
+--     Price       int,
+--     Quantity    int,
+--     SupplierID  int NOT NULL,
+--     FOREIGN KEY (SupplierID) REFERENCES Supplier (SupplierID)
+-- );
+
 CREATE TABLE SparePart
 (
     SparePartID int NOT NULL PRIMARY KEY,
@@ -91,7 +186,9 @@ CREATE TABLE SparePart
     Price       int,
     Quantity    int,
     SupplierID  int NOT NULL,
-    FOREIGN KEY (SupplierID) REFERENCES Supplier (SupplierID)
+    ProductID   int NOT NULL,
+    FOREIGN KEY (SupplierID) REFERENCES Supplier (SupplierID),
+    FOREIGN KEY (ProductID) REFERENCES Product (ProductID)
 );
 
 CREATE TABLE ModelSparePart
